@@ -1,0 +1,139 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{sansmathaccent}
+\pdfmapfile{+sansmathaccent.map}
+\usepackage{blkarray}
+
+% Use Beamer Theme
+\usetheme{Copenhagen}
+
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{yellow-ugm}{RGB}{244,197,34}
+\definecolor{blue-ugm}{RGB}{0,85,117}
+\definecolor{black-ugm}{RGB}{35,31,32}
+
+\setbeamercolor{locally}{fg=white,bg=blue-ugm}
+\setbeamercolor{website}{fg=black-ugm,bg=yellow-ugm}
+
+\setbeamercolor{header1}{bg=blue-ugm}
+\setbeamercolor{header2}{bg=yellow-ugm}
+\setbeamercolor{header3}{bg=blue-ugm}
+
+\setbeamercolor{local structure}{fg=blue-ugm}
+\setbeamercolor{frametitle}{fg=blue-ugm,bg=white}
+
+\setbeamercolor{titlepage}{fg=blue-ugm}
+\setbeamerfont{titlepage}{size=\LARGE}
+\setbeamerfont{subtitlepage}{size=\Large}
+\setbeamerfont{other}{size=\normalsize}
+
+\setbeamertemplate{title page}
+{
+
+    \begin{beamercolorbox}[right]{titlepage}
+        \usebeamerfont{titlepage} \inserttitle \par
+        \usebeamerfont{subtitlepage} \insertsubtitle \par
+        \bigskip
+        \usebeamerfont{other} \insertauthor \par
+        \bigskip
+        \insertinstitute \par
+        \bigskip
+        \insertdate
+    \end{beamercolorbox}
+
+}
+
+\setbeamercolor{block title}{bg=blue-ugm,fg=white}
+
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.7\paperwidth,ht=2ex,dp=1ex]{header1}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2ex,dp=1ex]{header2}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.1\paperwidth,ht=2ex,dp=1ex]{header3}%
+    \end{beamercolorbox}%
+  }
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=3ex,dp=1.5ex,center]{website}%
+      \small{ugm.ac.id}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.75\paperwidth,ht=3ex,dp=1.5ex,center]{locally}%
+      \hspace{2cm} \footnotesize{LOCALLY ROOTED, GLOBALLY RESPECTED} \hspace
+      {0.5cm} \insertframenumber{}
+  \end{beamercolorbox}%
+}
+}
+
+
+\setbeamertemplate{frametitle}
+{
+    \begin{beamercolorbox}[ht=2ex,dp=0ex]{frametitle}
+        \Large{\insertframetitle}
+        \hfill
+        \raisebox{-0.4cm}{\includegraphics[width=.07\textwidth]{logo-short-ugm.png}}
+    \end{beamercolorbox}
+}
+
+
+
+\beamertemplatenavigationsymbolsempty % to get rid of nav symbols
+
+
+% Modify Counting Style in ToC
+\defbeamertemplate{subsection in toc}{bullets}{%
+  \leavevmode
+  \parbox[t]{1em}{\textbullet\hfill}%
+  \parbox[t]{\dimexpr\textwidth-1em\relax}{\inserttocsubsection}\par}
+\defbeamertemplate{section in toc}{sections numbered roman}{%
+  \leavevmode%
+  \MakeUppercase{\romannumeral\inserttocsectionnumber}.\ %
+  \inserttocsection\par}
+\setbeamertemplate{section in toc}[sections numbered roman]
+\setbeamertemplate{subsection in toc}[bullets]
+
+% Remove Header
+%\setbeamertemplate{headline}{}
+
+% Modify Figure Caption
+\usepackage[labelsep=endash]{caption}
+\renewcommand{\figurename}{}
+
+% Define Graphics Path
+\graphicspath{{./theme/ugm/}{./figures/}}
+
+% Put Background Figure on Each Slides
+%\usebackgroundtemplate%
+%{
+%	\parbox[c][\paperheight][c]{\paperwidth}{
+%	\centering
+%    \includegraphics[scale=1.0]{UGM_Logo_Blue.pdf}}
+%}
+
+% Tikz Package
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{mindmap}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{subcaption}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+% footnote without number
+\newcommand\blfootnote[1]{
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}
+	\addtocounter{footnote}{-1}
+	\endgroup
+}
